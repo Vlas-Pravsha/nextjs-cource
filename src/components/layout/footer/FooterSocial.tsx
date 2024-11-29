@@ -1,11 +1,11 @@
-import { Instagram, Twitter } from 'lucide-react'
-import { Button } from '../../ui/button'
+import { Instagram, Twitter } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function FooterSocial() {
   return (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">
-        <span className="text-red-500 mr-1">•</span>
+        <span className="mr-1 text-red-500">•</span>
         Social Network
       </h3>
       <div className="flex gap-2">
@@ -17,5 +17,5 @@ export function FooterSocial() {
         </Button>
       </div>
     </div>
-  )
+  );
 }

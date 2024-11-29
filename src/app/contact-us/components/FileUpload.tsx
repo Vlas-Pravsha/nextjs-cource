@@ -4,7 +4,7 @@ import type { Dispatch, SetStateAction } from "react";
 
 import { Folder, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button, Card } from "../ui";
+import { Button, Card } from "@/components/ui";
 
 interface FileUploadProps {
   files: File[];

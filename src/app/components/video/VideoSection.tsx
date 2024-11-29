@@ -1,12 +1,12 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import React from 'react'
-import { Button } from '../ui/button'
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
+import { Button } from "@/components/ui/button";
 
 interface VideoSectionProps {
-  title: string
-  children: React.ReactNode
-  onPrevious?: () => void
-  onNext?: () => void
+  title: string;
+  children: React.ReactNode;
+  onPrevious?: () => void;
+  onNext?: () => void;
 }
 
 export const VideoSection: React.FC<VideoSectionProps> = ({
@@ -16,9 +16,9 @@ export const VideoSection: React.FC<VideoSectionProps> = ({
   onNext,
 }) => {
   return (
-    <section className="py-8 bg-gray-100">
+    <section className="bg-gray-100 py-8">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between mb-6 ">
+        <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-gray-900">
             <span className="border-l-4 border-red-500 pl-3">{title}</span>
           </h2>
@@ -31,10 +31,10 @@ export const VideoSection: React.FC<VideoSectionProps> = ({
             </Button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {children}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

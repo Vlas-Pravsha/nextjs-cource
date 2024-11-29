@@ -3,15 +3,15 @@
 import type { UseFormReturn } from "react-hook-form";
 
 import { AlignLeft, Bold, Image, Italic, Link, Palette } from "lucide-react";
-import { Button } from "../ui/button";
 import {
+  Button,
+  Textarea,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
-import { Textarea } from "../ui/textarea";
+} from "@/components/ui/";
 
 interface TextEditorProps {
   form: UseFormReturn<any>;

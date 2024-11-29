@@ -7,8 +7,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
-import { Input } from "../ui/input";
+  Input,
+} from "@/components/ui/";
 
 interface ContactFormFieldsProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

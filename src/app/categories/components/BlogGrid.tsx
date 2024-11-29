@@ -1,10 +1,15 @@
-import type { Post } from "../../types/post";
+import type { Post } from "@/types/post";
 import { Bookmark } from "lucide-react";
-import { AspectRatio } from "../ui/aspect-ratio";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Button } from "../ui/button";
-import { Card } from "../ui/card";
-import { Separator } from "../ui/separator";
+import {
+  AspectRatio,
+  Button,
+  Card,
+  Separator,
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/";
+
 import { cn } from "@/lib/utils";
 
 interface BlogGridProps {
@@ -38,7 +43,7 @@ export function BlogGrid({ posts, viewMode }: BlogGridProps) {
             <h3 className="mb-2 line-clamp-2 text-lg font-semibold">
               {post.title}
             </h3>
-            <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
+            <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
               {post.excerpt}
             </p>
             <Separator className="mb-4" />
@@ -50,7 +55,7 @@ export function BlogGrid({ posts, viewMode }: BlogGridProps) {
                 </Avatar>
                 <div>
                   <p className="text-sm font-medium">{post.author.name}</p>
-                  <p className="text-muted-foreground text-xs">{post.date}</p>
+                  <p className="text-xs text-muted-foreground">{post.date}</p>
                 </div>
               </div>
               <Button variant="ghost" size="icon">

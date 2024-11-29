@@ -1,10 +1,10 @@
-import { FeaturedArticles } from "@/components/articles/FeaturedArticles";
-import { NewPosts } from "@/components/articles/NewPosts";
-import { PopularPosts } from "@/components/articles/PopularPosts";
+import { FeaturedArticles } from "@/app/components/articles/FeaturedArticles";
+import { NewPosts } from "@/app/components/articles/NewPosts";
+import { PopularPosts } from "@/app/components/articles/PopularPosts";
 import { CategoryTags } from "@/components/layout/CategoryTags";
-import { VideoCard } from "@/components/video/VideoCard";
-import { VideoSection } from "@/components/video/VideoSection";
-import { WeatherDashboard } from "@/components/weather/WeatherDashboard";
+import { VideoCard } from "@/app/components/video/VideoCard";
+import { VideoSection } from "@/app/components/video/VideoSection";
+import { WeatherDashboard } from "@/app/components/weather/WeatherDashboard";
 
 export default function Home() {
   return (

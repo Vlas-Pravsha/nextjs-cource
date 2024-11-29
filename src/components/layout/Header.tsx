@@ -1,19 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Bookmark,
-  Search,
-  User,
-  LogOut,
-  Settings,
-  UserCircle,
-} from "lucide-react";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from "../ui/navigation-menu";
+import { Bookmark, Search, LogOut, Settings, UserCircle } from "lucide-react";
 import {
   Avatar,
   AvatarImage,
@@ -24,7 +12,11 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
 } from "@/components/ui";
+
 import Link from "next/link";
 
 export function Header() {
@@ -35,7 +27,6 @@ export function Header() {
   });
 
   const handleLogout = () => {
-    // Implement logout logic
     setUser(null);
   };
 
@@ -79,9 +70,11 @@ export function Header() {
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Avatar className="h-8 w-8 cursor-pointer">
-                    <AvatarImage src={user.avatarUrl} alt="User avatar" />
-                  </Avatar>
+                  <button>
+                    <Avatar className="h-8 w-8 cursor-pointer">
+                      <AvatarImage src={user.avatarUrl} alt="User avatar" />
+                    </Avatar>
+                  </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56">
                   <DropdownMenuItem className="cursor-default">
@@ -91,11 +84,11 @@ export function Header() {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
                     <Settings className="mr-2 h-4 w-4" />
-                    <Link href="/profile">Profile Settings</Link>
+                    <Link href="/profile/settings">Profile Settings</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <Bookmark className="mr-2 h-4 w-4" />
-                    <Link href="/saved">Saved Articles</Link>
+                    <Link href="/profile/markered-posts">Saved Articles</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem

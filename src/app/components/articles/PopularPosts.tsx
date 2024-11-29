@@ -3,10 +3,17 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { Bookmark, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback } from "react";
-import { posts } from "../../constants/posts";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Button } from "../ui/button";
-import { Card, CardContent, CardFooter } from "../ui/card";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardFooter,
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/";
+
+import { posts } from "@/constants/posts";
 
 export function PopularPosts() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -53,7 +60,7 @@ export function PopularPosts() {
                   />
                   <div className="p-4">
                     <h3 className="mb-2 font-bold">{post.title}</h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-sm text-muted-foreground">
                       {post.excerpt}
                     </p>
                   </div>
@@ -66,7 +73,7 @@ export function PopularPosts() {
                     </Avatar>
                     <div>
                       <p className="text-sm font-medium">{post.author.name}</p>
-                      <p className="text-muted-foreground text-xs">
+                      <p className="text-xs text-muted-foreground">
                         {post.date}
                       </p>
                     </div>

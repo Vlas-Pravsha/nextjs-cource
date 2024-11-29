@@ -1,5 +1,5 @@
 import { Cloud, CloudRain, Sun } from "lucide-react";
-import { Card } from "../ui/card";
+import { Card } from "@/components/ui/card";
 import { WeatherChart } from "./WeatherChart";
 
 interface WeatherMainCardProps {
