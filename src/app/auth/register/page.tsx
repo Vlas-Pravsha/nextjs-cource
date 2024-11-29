@@ -21,7 +21,7 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <main className="container mx-auto flex min-h-[calc(100vh-80px)] items-center justify-center">
+    <main className="container mx-auto mt-[7%] flex items-center justify-center">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-center text-2xl font-bold">
@@ -80,7 +80,7 @@ export default function Register() {
           <div className="text-center text-sm text-muted-foreground">
             Already have an account?{" "}
             <Link
-              href="/login"
+              href="/auth/login"
               className="text-primary underline-offset-4 hover:underline"
             >
               Sign in

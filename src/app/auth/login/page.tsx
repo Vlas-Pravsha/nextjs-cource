@@ -19,7 +19,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <main className="container mx-auto flex min-h-[calc(100vh-80px)] items-center justify-center">
+    <main className="container mx-auto mt-[10%] flex items-center justify-center">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <CardTitle className="text-center text-2xl font-bold">
@@ -73,7 +73,7 @@ export default function Login() {
           <div className="text-center text-sm text-muted-foreground">
             Don&apos;t have an account?{" "}
             <Link
-              href="/register"
+              href="/auth/register"
               className="text-primary underline-offset-4 hover:underline"
             >
               Sign up

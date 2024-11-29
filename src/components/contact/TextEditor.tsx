@@ -26,7 +26,7 @@ export function TextEditor({ form }: TextEditorProps) {
         <FormItem className="w-4/5">
           <FormLabel>Explanation</FormLabel>
           <div className="space-y-2">
-            <div className="bg-muted flex flex-wrap gap-2 rounded-md p-2">
+            <div className="flex flex-wrap gap-2 rounded-md bg-muted p-2">
               <Button variant="ghost" size="icon">
                 <Image className="h-4 w-4" />
               </Button>

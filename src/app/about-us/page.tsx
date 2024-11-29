@@ -74,8 +74,8 @@ export default function AboutUs() {
             <ChevronLeft className="h-6 w-6" />
           </Button>
           <div className="flex items-center gap-2">
-            <span className="text-muted-foreground text-sm">Home</span>
-            <span className="text-muted-foreground text-sm">/</span>
+            <span className="text-sm text-muted-foreground">Home</span>
+            <span className="text-sm text-muted-foreground">/</span>
             <span className="text-sm">About Us</span>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function AboutUs() {
           <div className="relative">
             <AspectRatio
               ratio={16 / 9}
-              className="bg-muted overflow-hidden rounded-lg"
+              className="overflow-hidden rounded-lg bg-muted"
             >
               <div className="absolute inset-0" />
               <PlayCircle className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform cursor-pointer text-white transition-transform hover:scale-110" />
@@ -130,7 +130,7 @@ export default function AboutUs() {
               key={index}
               className="p-6 text-center transition-shadow hover:shadow-lg"
             >
-              <stat.icon className="text-primary mx-auto mb-4 h-12 w-12" />
+              <stat.icon className="mx-auto mb-4 h-12 w-12 text-primary" />
               <h3 className="mb-2 text-3xl font-bold">{stat.value}</h3>
               <p className="text-gray-600">{stat.label}</p>
             </Card>
@@ -142,21 +142,21 @@ export default function AboutUs() {
           <h3 className="mb-6 text-2xl font-bold">Mega News Information</h3>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div className="flex items-center">
-              <Mail className="text-primary mr-3 h-8 w-8" />
+              <Mail className="mr-3 h-8 w-8 text-primary" />
               <div>
                 <p className="text-base text-gray-600">Email</p>
                 <p className="font-medium">Management@Mega.News</p>
               </div>
             </div>
             <div className="flex items-center">
-              <Phone className="text-primary mr-3 h-8 w-8" />
+              <Phone className="mr-3 h-8 w-8 text-primary" />
               <div>
                 <p className="text-base text-gray-600">Phone Number</p>
                 <p className="font-medium">+1(234) 567-8910</p>
               </div>
             </div>
             <div className="flex items-center">
-              <MapPin className="text-primary mr-3 h-8 w-8" />
+              <MapPin className="mr-3 h-8 w-8 text-primary" />
               <div>
                 <p className="text-base text-gray-600">Address</p>
                 <p className="font-medium">
@@ -165,7 +165,7 @@ export default function AboutUs() {
               </div>
             </div>
             <div className="flex items-center">
-              <Clock className="text-primary mr-3 h-8 w-8" />
+              <Clock className="mr-3 h-8 w-8 text-primary" />
               <div>
                 <p className="text-base text-gray-600">Working Hours</p>
                 <p className="font-medium">24/7, All Week</p>

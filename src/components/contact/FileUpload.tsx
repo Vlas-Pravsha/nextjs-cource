@@ -3,9 +3,8 @@
 import type { Dispatch, SetStateAction } from "react";
 
 import { Folder, X } from "lucide-react";
-import { cn } from "../../lib/utils";
-import { Button } from "../ui/button";
-import { Card } from "../ui/card";
+import { cn } from "@/lib/utils";
+import { Button, Card } from "../ui";
 
 interface FileUploadProps {
   files: File[];
@@ -39,12 +38,12 @@ export function FileUpload({ files, setFiles }: FileUploadProps) {
         className={cn(
           "h-64 rounded-lg border-2 border-dashed p-8",
           "flex flex-col items-center justify-center gap-4",
-          "bg-muted/50 hover:bg-muted/80 transition-colors",
+          "bg-muted/50 transition-colors hover:bg-muted/80",
         )}
       >
-        <Folder className="text-muted-foreground h-10 w-10" />
+        <Folder className="h-10 w-10 text-muted-foreground" />
         <div className="text-center">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-sm text-muted-foreground">
             Drop Image Here, Paste Or
           </p>
           <label htmlFor="file-upload">

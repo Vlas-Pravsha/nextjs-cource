@@ -11,6 +11,7 @@ import {
 import { Input } from "../ui/input";
 
 interface ContactFormFieldsProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form: UseFormReturn<any>;
 }
 
