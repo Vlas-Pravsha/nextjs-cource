@@ -1,7 +1,7 @@
 import { LayoutGrid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface BlogCategoriesProps {
+interface PostCategoriesProps {
   activeCategory: string;
   onCategoryChange: (category: string) => void;
   viewMode: "grid" | "list";
@@ -10,12 +10,12 @@ interface BlogCategoriesProps {
 
 const categories = ["New", "Trendy", "Popular", "Top"];
 
-export function BlogCategories({
+export function PostCategories({
   activeCategory,
   onCategoryChange,
   viewMode,
   onViewModeChange,
-}: BlogCategoriesProps) {
+}: PostCategoriesProps) {
   return (
     <div className="mb-8 flex items-center justify-between">
       <div className="flex gap-2">

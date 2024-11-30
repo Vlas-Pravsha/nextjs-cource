@@ -44,7 +44,9 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
             <button className="font-semibold hover:text-black">
               <Link href="/profile/send-post"> Send Post</Link>
             </button>
-            <button className="font-semibold hover:text-black">Posts</button>
+            <button className="font-semibold hover:text-black">
+              <Link href="/categories">Posts</Link>
+            </button>
           </div>
           <Link href="/profile/settings">
             <Button aria-label="Edit Profile" variant="destructive">

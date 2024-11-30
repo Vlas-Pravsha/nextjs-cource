@@ -17,7 +17,7 @@ interface BlogGridProps {
   viewMode: "grid" | "list";
 }
 
-export function BlogGrid({ posts, viewMode }: BlogGridProps) {
+export function PostLayout({ posts, viewMode }: BlogGridProps) {
   return (
     <div
       className={cn(

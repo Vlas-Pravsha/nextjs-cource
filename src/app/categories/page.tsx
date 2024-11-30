@@ -1,34 +1,39 @@
 "use client";
 
 import { useState } from "react";
-import { BlogHeader } from "./components/BlogHeader";
-import { BlogCategories } from "./components/BlogCategories";
-import { BlogGrid } from "./components/BlogGrid";
-import { BlogPagination } from "./components/BlogPagination";
 import { posts } from "@/constants/posts";
+import { ChevronRight } from "lucide-react";
+import { PostCategories } from "@/components/PostCategories";
+import { PostLayout } from "@/components/PostLayout";
+import { PostPagination } from "@/components/PostPagination";
+
+const TOTAL_PAGES = Math.ceil(posts.length / 9);
 
 export default function Categories() {
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState<string>("Sport");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
-  const totalPages = 9;
-
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-8">
-        <BlogHeader />
-        <BlogCategories
+        <div className="mb-8 flex items-center gap-2 text-sm text-muted-foreground">
+          <span className="cursor-pointer hover:text-foreground">Home</span>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground">Sport</span>
+        </div>
+
+        <PostCategories
           activeCategory={activeCategory}
           onCategoryChange={setActiveCategory}
           viewMode={viewMode}
           onViewModeChange={setViewMode}
         />
-        <BlogGrid posts={posts} viewMode={viewMode} />
+        <PostLayout posts={posts} viewMode={viewMode} />
         <div className="mt-8">
-          <BlogPagination
+          <PostPagination
             currentPage={currentPage}
-            totalPages={totalPages}
+            totalPages={TOTAL_PAGES}
             onPageChange={setCurrentPage}
           />
         </div>

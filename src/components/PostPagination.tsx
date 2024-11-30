@@ -1,21 +1,21 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface BlogPaginationProps {
+interface PostPaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
 }
 
-export function BlogPagination({
+export function PostPagination({
   currentPage,
   totalPages,
   onPageChange,
-}: BlogPaginationProps) {
+}: PostPaginationProps) {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="mt-8 flex items-center justify-center gap-2">
       <Button
         variant="ghost"
         size="icon"

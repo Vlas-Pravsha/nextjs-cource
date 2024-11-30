@@ -1,12 +1,23 @@
-import { BlogGrid } from "@/app/categories/components/BlogGrid";
-import { Button } from "@/components/ui";
+"use client";
+
+import { PostLayout } from "@/components/PostLayout";
+import { PostPagination } from "@/components/PostPagination";
 import { posts } from "@/constants/posts";
-import { ChevronLeft } from "lucide-react";
+import { useState } from "react";
+
+const TOTAL_PAGES = Math.ceil(posts.length / 9);
 
 const Marked = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   return (
     <div className="container mx-auto">
-      <BlogGrid posts={posts} viewMode="grid" />
+      <PostLayout posts={posts} viewMode="grid" />
+      <PostPagination
+        currentPage={currentPage}
+        totalPages={TOTAL_PAGES}
+        onPageChange={setCurrentPage}
+      />
     </div>
   );
 };
