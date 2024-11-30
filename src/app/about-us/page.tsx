@@ -17,6 +17,7 @@ import { StatsCard } from "./components/StatsCard";
 import { InfoCard } from "./components/InfoCard";
 import { TeamMemberCard } from "./components/TeamMemberCard";
 import { teamMembers } from "@/constants/teamMembers";
+import Link from "next/link";
 
 const stats = [
   { icon: Users, label: "Team Members", value: "50+" },
@@ -42,7 +43,9 @@ export default function AboutUs() {
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2">
           <Button variant="ghost" size="icon" className="rounded-full">
-            <ChevronLeft className="h-6 w-6" />
+            <Link href="/">
+              <ChevronLeft className="h-6 w-6" />
+            </Link>
           </Button>
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">Home</span>

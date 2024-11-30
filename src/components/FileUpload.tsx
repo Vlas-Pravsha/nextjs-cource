@@ -19,6 +19,7 @@ export function FileUpload({ files, setFiles }: FileUploadProps) {
   };
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     if (e.target.files) {
       const selectedFiles = Array.from(e.target.files);
       setFiles((prev) => [...prev, ...selectedFiles]);
@@ -30,7 +31,7 @@ export function FileUpload({ files, setFiles }: FileUploadProps) {
   };
 
   return (
-    <div className="w-1/5 space-y-4">
+    <div className="w-full space-y-4">
       <h5 className="text-sm font-medium">Add File</h5>
       <div
         onDrop={handleDrop}
@@ -48,7 +49,7 @@ export function FileUpload({ files, setFiles }: FileUploadProps) {
           </p>
           <label htmlFor="file-upload">
             <Button
-              variant="ghost"
+              variant="outline"
               className="mt-2"
               onClick={() => document.getElementById("file-upload")?.click()}
             >

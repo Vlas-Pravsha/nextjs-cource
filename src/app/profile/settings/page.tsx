@@ -1,7 +1,12 @@
 import React from "react";
+import { SettingForm } from "./components/SettingForm";
 
-const page = () => {
-  return <div>page</div>;
+const Settings = () => {
+  return (
+    <div className="container mx-auto py-4">
+      <SettingForm />
+    </div>
+  );
 };
 
-export default page;
+export default Settings;

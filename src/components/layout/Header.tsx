@@ -88,7 +88,7 @@ export function Header() {
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <Bookmark className="mr-2 h-4 w-4" />
-                    <Link href="/profile/markered-posts">Saved Articles</Link>
+                    <Link href="/profile/marked-posts">Saved Articles</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
@@ -111,7 +111,7 @@ export function Header() {
               </div>
             )}
             <Button variant="ghost" size="icon">
-              <Link href="/profile/markered-posts">
+              <Link href="/profile/marked-posts">
                 <Bookmark />
               </Link>
             </Button>

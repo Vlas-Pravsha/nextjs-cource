@@ -15,16 +15,17 @@ import {
 
 interface TextEditorProps {
   form: UseFormReturn<any>;
+  label: string;
 }
 
-export function TextEditor({ form }: TextEditorProps) {
+export function TextEditor({ form, label }: TextEditorProps) {
   return (
     <FormField
       control={form.control}
       name="explanation"
       render={({ field }) => (
-        <FormItem className="w-4/5">
-          <FormLabel>Explanation</FormLabel>
+        <FormItem className="w-full">
+          <FormLabel>{label}</FormLabel>
           <div className="space-y-2">
             <div className="flex flex-wrap gap-2 rounded-md bg-muted p-2">
               <Button variant="ghost" size="icon">
