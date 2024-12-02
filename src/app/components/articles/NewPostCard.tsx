@@ -30,7 +30,7 @@ export function NewPostCard({ post }: NewPostCardProps) {
               {post.title}
             </h3>
             <p className="mb-2 line-clamp-2 text-sm text-muted-foreground">
-              {post.excerpt}
+              {post.description}
             </p>
             <div className="flex items-center justify-between rounded-lg bg-gray-100 px-2 py-1">
               <div className="flex items-center space-x-2">

@@ -4,7 +4,7 @@ export const posts: Post[] = [
   {
     id: "1",
     title: "Opening Day Of Boating Season, Seattle WA",
-    excerpt:
+    description:
       "Of Course The Puget Sound Is Very Watery, And Where There Is Water, There Are Boats.",
     image:
       "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=800&q=80",
@@ -20,7 +20,7 @@ export const posts: Post[] = [
   {
     id: "2",
     title: "How To Choose The Right Laptop For Programming",
-    excerpt:
+    description:
       "Choosing The Right Laptop For Programming Can Be A Tough Process.",
     image:
       "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=800&q=80",
@@ -36,7 +36,7 @@ export const posts: Post[] = [
   {
     id: "3",
     title: "How We Built The First Real Self-Driving Car",
-    excerpt:
+    description:
       "Electric Self-Driving Cars Will Save Millions Of Lives And Significantly Accelerate The World's Transition To Sustainable Energy.",
     image:
       "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
@@ -52,7 +52,7 @@ export const posts: Post[] = [
   {
     id: "4",
     title: "Self-Improvement Has Become An Extreme Sport",
-    excerpt:
+    description:
       "What We're Told We Must Do Each Day To Develop And Be Successful Has Gone Out Of Control.",
     image:
       "https://images.unsplash.com/photo-1486218119243-13883505764c?w=800&q=80",
@@ -68,7 +68,7 @@ export const posts: Post[] = [
   {
     id: "5",
     title: "Why Buying A New Car Makes More Sense Now",
-    excerpt:
+    description:
       "Many Experts Will Tell You Buying Cars Used Is Best For Your Long-Term Financial Health.",
     image:
       "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
@@ -84,7 +84,7 @@ export const posts: Post[] = [
   {
     id: "6",
     title: "How To Persuade Your Parents To Buy Fast Food",
-    excerpt:
+    description:
       "Parents Often Don't Want To Buy Fast Food. They May Be Worried That It's Too Expensive.",
     image:
       "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800&q=80",
@@ -100,7 +100,7 @@ export const posts: Post[] = [
   {
     id: "7",
     title: "Typography Can Make Or Break Your Design",
-    excerpt:
+    description:
       "One Of The Most Important Skills You Can Learn As A Designer Is How To Choose Type.",
     image:
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
@@ -116,7 +116,7 @@ export const posts: Post[] = [
   {
     id: "8",
     title: "House Boating On Lake Shasta",
-    excerpt:
+    description:
       "The Best Way To Spend A Long 4th Of July Weekend: Wake Boarding, Swimming, Barbecues.",
     image:
       "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80",
@@ -132,7 +132,7 @@ export const posts: Post[] = [
   {
     id: "9",
     title: "How To Persuade Your Parents To Buy Fast Food",
-    excerpt:
+    description:
       "Parents Often Don't Want To Buy Fast Food. They May Be Worried That It's Too Expensive.",
     image:
       "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800&q=80",
@@ -148,7 +148,7 @@ export const posts: Post[] = [
   {
     id: "10",
     title: "Typography Can Make Or Break Your Design",
-    excerpt:
+    description:
       "One Of The Most Important Skills You Can Learn As A Designer Is How To Choose Type.",
     image:
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
@@ -164,7 +164,7 @@ export const posts: Post[] = [
   {
     id: "11",
     title: "House Boating On Lake Shasta",
-    excerpt:
+    description:
       "The Best Way To Spend A Long 4th Of July Weekend: Wake Boarding, Swimming, Barbecues.",
     image:
       "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
@@ -180,7 +180,7 @@ export const posts: Post[] = [
   {
     id: "12",
     title: "House Boating On Lake Shasta",
-    excerpt:
+    description:
       "The Best Way To Spend A Long 4th Of July Weekend: Wake Boarding, Swimming, Barbecues.",
     image:
       "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80",

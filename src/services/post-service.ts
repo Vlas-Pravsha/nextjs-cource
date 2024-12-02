@@ -13,3 +13,13 @@ export interface Post {
   date: string;
   category: string;
 }
+
+class PostService {
+  private apiBaseUrl: string;
+
+  constructor(baseUrl: string) {
+    this.apiBaseUrl = baseUrl;
+  }
+}
+
+export default PostService;

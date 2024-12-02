@@ -44,7 +44,7 @@ export function PostLayout({ posts, viewMode }: BlogGridProps) {
               {post.title}
             </h3>
             <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
-              {post.excerpt}
+              {post.description}
             </p>
             <Separator className="mb-4" />
             <div className="flex items-center justify-between">

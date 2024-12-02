@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Bookmark, Search, LogOut, Settings, UserCircle } from "lucide-react";
 import {
   Avatar,
@@ -15,44 +15,60 @@ import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
+  AvatarFallback,
 } from "@/components/ui";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
+import UserService, { type UserData } from "@/services/user-service";
+import { pagesConfig } from "@/config/pages.config";
 
 export function Header() {
-  const [user, setUser] = useState({
-    name: "John Doe",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&q=80",
-  });
+  const [user, setUser] = useState<UserData | null>(null);
+
+  const userService = new UserService(process.env.NEXT_PUBLIC_SERVER_API ?? "");
+
+  useEffect(() => {
+    async function getCurrentUserAsync() {
+      try {
+        const user = await userService.getCurrentUser();
+        setUser(user);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    void getCurrentUserAsync();
+  }, []);
 
   const handleLogout = () => {
+    userService.logout();
     setUser(null);
   };
 
   return (
     <header className="border-b">
+      <ToastContainer />
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-orange-500">
-            <Link href="/">MEGA.news</Link>
+            <Link href={pagesConfig.home}>MEGA.news</Link>
           </h1>
 
           <NavigationMenu>
             <NavigationMenuList className="hidden space-x-6 md:flex">
               <NavigationMenuItem>
                 <Button variant="link">
-                  <Link href="/categories">Categories</Link>
+                  <Link href={pagesConfig.categories}>Categories</Link>
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Button variant="link">
-                  <Link href="/contact-us">Contact Us</Link>
+                  <Link href={pagesConfig.contact}>Contact Us</Link>
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Button variant="link">
-                  <Link href="/about-us">About Us</Link>
+                  <Link href={pagesConfig.about}>About Us</Link>
                 </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -72,23 +88,27 @@ export function Header() {
                 <DropdownMenuTrigger asChild>
                   <button>
                     <Avatar className="h-8 w-8 cursor-pointer">
-                      <AvatarImage src={user.avatarUrl} alt="User avatar" />
+                      {/* <AvatarImage
+                        src={user.avatarUrl || "/default-avatar.png"}
+                        alt="User avatar"
+                      /> */}
+                      <AvatarFallback>{user.username![0]}</AvatarFallback>
                     </Avatar>
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56">
                   <DropdownMenuItem className="cursor-default">
                     <UserCircle className="mr-2 h-4 w-4" />
-                    <span>{user.name}</span>
+                    <span>{user.username}</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
                     <Settings className="mr-2 h-4 w-4" />
-                    <Link href="/profile/settings">Profile Settings</Link>
+                    <Link href={pagesConfig.settings}>Profile Settings</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <Bookmark className="mr-2 h-4 w-4" />
-                    <Link href="/profile/marked-posts">Saved Articles</Link>
+                    <Link href={pagesConfig.marked}>Saved Articles</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
@@ -102,16 +122,16 @@ export function Header() {
               </DropdownMenu>
             ) : (
               <div className="flex items-center space-x-2">
-                <Link href="/login">
+                <Link href={pagesConfig.login}>
                   <Button variant="outline">Login</Button>
                 </Link>
-                <Link href="/register">
+                <Link href={pagesConfig.register}>
                   <Button>Sign Up</Button>
                 </Link>
               </div>
             )}
             <Button variant="ghost" size="icon">
-              <Link href="/profile/marked-posts">
+              <Link href={pagesConfig.marked}>
                 <Bookmark />
               </Link>
             </Button>

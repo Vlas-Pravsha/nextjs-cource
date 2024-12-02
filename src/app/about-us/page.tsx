@@ -18,6 +18,7 @@ import { InfoCard } from "./components/InfoCard";
 import { TeamMemberCard } from "./components/TeamMemberCard";
 import { teamMembers } from "@/constants/teamMembers";
 import Link from "next/link";
+import { pagesConfig } from "@/config/pages.config";
 
 const stats = [
   { icon: Users, label: "Team Members", value: "50+" },
@@ -43,7 +44,7 @@ export default function AboutUs() {
         {/* Breadcrumb */}
         <div className="mb-8 flex items-center gap-2">
           <Button variant="ghost" size="icon" className="rounded-full">
-            <Link href="/">
+            <Link href={pagesConfig.home}>
               <ChevronLeft className="h-6 w-6" />
             </Link>
           </Button>

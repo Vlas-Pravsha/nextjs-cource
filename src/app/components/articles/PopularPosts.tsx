@@ -61,7 +61,7 @@ export function PopularPosts() {
                   <div className="p-4">
                     <h3 className="mb-2 font-bold">{post.title}</h3>
                     <p className="text-sm text-muted-foreground">
-                      {post.excerpt}
+                      {post.description}
                     </p>
                   </div>
                 </CardContent>

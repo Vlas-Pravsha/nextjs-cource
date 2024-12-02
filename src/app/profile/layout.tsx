@@ -1,4 +1,5 @@
 import { Avatar, AvatarImage, Button } from "@/components/ui";
+import { pagesConfig } from "@/config/pages.config";
 import { ChevronLeft, Pencil } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +9,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
     <div className="container mx-auto py-4">
       <div className="mb-8 flex items-center gap-2">
         <Button variant="ghost" size="icon" className="rounded-full">
-          <Link href="/">
+          <Link href={pagesConfig.home}>
             <ChevronLeft className="h-6 w-6" />
           </Link>
         </Button>
@@ -39,16 +40,16 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
           <div className="flex gap-6 px-6 py-2 text-sm text-gray-600">
             <button className="font-semibold hover:text-black">
-              <Link href="/profile/marked-posts">Marked</Link>
+              <Link href={pagesConfig.marked}>Marked</Link>
             </button>
             <button className="font-semibold hover:text-black">
-              <Link href="/profile/send-post"> Send Post</Link>
+              <Link href={pagesConfig.send}> Send Post</Link>
             </button>
             <button className="font-semibold hover:text-black">
-              <Link href="/categories">Posts</Link>
+              <Link href={pagesConfig.categories}>Posts</Link>
             </button>
           </div>
-          <Link href="/profile/settings">
+          <Link href={pagesConfig.settings}>
             <Button aria-label="Edit Profile" variant="destructive">
               <Pencil size={16} />
               Edit Profile
