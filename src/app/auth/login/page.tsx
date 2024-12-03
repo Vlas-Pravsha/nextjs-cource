@@ -62,7 +62,7 @@ export default function Login() {
   };
 
   return (
-    <main className="container mx-auto mt-[10%] flex items-center justify-center">
+    <main className="container mx-auto mt-[10%] flex items-center justify-center p-4">
       <ToastContainer />
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
@@ -130,7 +130,7 @@ export default function Login() {
             </Button>
           </form>
         </CardContent>
-        <CardFooter className="text-center text-sm text-muted-foreground">
+        <CardFooter className="justify-between text-center text-sm text-muted-foreground">
           Don&apos;t have an account?{" "}
           <Link
             href={pagesConfig.register}

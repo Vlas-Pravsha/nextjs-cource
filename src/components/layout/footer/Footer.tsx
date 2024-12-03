@@ -8,13 +8,13 @@ import { FooterSocial } from "./FooterSocial";
 export function Footer() {
   return (
     <footer className="mt-16 py-12">
-      <div className="container mx-auto flex gap-8 px-4">
+      <div className="container mx-auto flex flex-col gap-8 px-4 lg:flex-row">
         <div className="flex flex-1 basis-1/2 flex-col gap-8">
-          <div className="flex flex-row gap-36">
+          <div className="flex flex-row gap-8 sm:flex-row sm:gap-36">
             <FooterAbout />
             <FooterCategories />
           </div>
-          <div className="flex flex-row gap-44">
+          <div className="flex flex-col gap-8 sm:flex-row sm:gap-44">
             <FooterNewsletter />
             <FooterSocial />
           </div>

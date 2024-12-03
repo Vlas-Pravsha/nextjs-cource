@@ -69,7 +69,7 @@ export default function Register() {
   };
 
   return (
-    <main className="container mx-auto mt-[7%] flex items-center justify-center">
+    <main className="container mx-auto mt-[7%] flex items-center justify-center p-4">
       <ToastContainer />
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
@@ -156,10 +156,10 @@ export default function Register() {
           </form>
         </CardContent>
 
-        <CardFooter className="text-center text-sm text-muted-foreground">
+        <CardFooter className="justify-between text-center text-sm text-muted-foreground">
           Already have an account?{" "}
           <Link
-            href={pagesConfig.register}
+            href={pagesConfig.login}
             className="text-primary underline-offset-4 hover:underline"
           >
             Sign in
