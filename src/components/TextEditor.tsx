@@ -16,13 +16,14 @@ import {
 interface TextEditorProps {
   form: UseFormReturn<any>;
   label: string;
+  name: string;
 }
 
-export function TextEditor({ form, label }: TextEditorProps) {
+export function TextEditor({ form, label, name }: TextEditorProps) {
   return (
     <FormField
       control={form.control}
-      name="explanation"
+      name={name}
       render={({ field }) => (
         <FormItem className="w-full">
           <FormLabel>{label}</FormLabel>

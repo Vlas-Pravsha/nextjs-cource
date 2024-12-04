@@ -1,23 +1,23 @@
-import type { Post } from "@/types/post";
+"use client";
+
 import { Bookmark } from "lucide-react";
 import {
   AspectRatio,
-  Button,
   Card,
   Separator,
   Avatar,
   AvatarFallback,
-  AvatarImage,
 } from "@/components/ui/";
 
 import { cn } from "@/lib/utils";
+import { type Post } from "@/services/post-service";
 
 interface BlogGridProps {
-  posts: Post[];
+  posts: Omit<Post, "user_id">[];
   viewMode: "grid" | "list";
 }
 
-export function PostLayout({ posts, viewMode }: BlogGridProps) {
+export function PostLayout({ viewMode, posts }: BlogGridProps) {
   return (
     <div
       className={cn(
@@ -27,9 +27,9 @@ export function PostLayout({ posts, viewMode }: BlogGridProps) {
           : "grid-cols-1",
       )}
     >
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <Card
-          key={post.id}
+          key={`post${post.title}-${index}`}
           className="overflow-hidden transition-shadow hover:shadow-lg"
         >
           <AspectRatio ratio={16 / 9}>
@@ -50,17 +50,18 @@ export function PostLayout({ posts, viewMode }: BlogGridProps) {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src={post.author.avatar} />
                   <AvatarFallback>{post.author.name[0]}</AvatarFallback>
                 </Avatar>
                 <div>
                   <p className="text-sm font-medium">{post.author.name}</p>
-                  <p className="text-xs text-muted-foreground">{post.date}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {post.createdAt?.slice(0, 10)}
+                  </p>
                 </div>
               </div>
-              <Button variant="ghost" size="icon">
-                <Bookmark className="h-4 w-4" />
-              </Button>
+              <button>
+                <Bookmark className={cn("h-5 w-5 text-gray-400")} />
+              </button>
             </div>
           </div>
         </Card>

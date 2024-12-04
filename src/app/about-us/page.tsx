@@ -2,7 +2,6 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 
 import {
-  ArrowRight,
   Building2,
   ChevronLeft,
   Clock,
@@ -21,9 +20,9 @@ import Link from "next/link";
 import { pagesConfig } from "@/config/pages.config";
 
 const stats = [
-  { icon: Users, label: "Team Members", value: "50+" },
-  { icon: Building2, label: "Global Offices", value: "12" },
-  { icon: Trophy, label: "Awards Won", value: "25+" },
+  { icon: Users, label: "Team Members", value: "1" },
+  { icon: Building2, label: "Global Offices", value: "My home" },
+  { icon: Trophy, label: "Awards Won", value: "0" },
 ];
 
 const contactInfo = [
@@ -62,17 +61,15 @@ export default function AboutUs() {
               We pay attention to your needs and do the best design.
             </h2>
             <p className="mb-8 text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit...
+              MEGA.news is a comprehensive news platform designed to keep
+              readers informed with the latest developments across a wide range
+              of topics. Covering politics, technology, entertainment, business,
+              and more, it delivers accurate, concise, and timely updates. With
+              a focus on providing high-quality journalism and an
+              easy-to-navigate interface, MEGA.news ensures users can quickly
+              access reliable news tailored to their interests and stay
+              connected to global events.
             </p>
-            <Button className="group">
-              Learn More{" "}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
           </div>
           <div className="relative">
             <AspectRatio

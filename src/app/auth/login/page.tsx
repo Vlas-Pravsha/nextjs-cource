@@ -126,7 +126,7 @@ export default function Login() {
             </div>
 
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Signing in..." : "Sign in"}
+              {loading ? "Signing in..." : "Sign-in"}
             </Button>
           </form>
         </CardContent>
@@ -136,7 +136,7 @@ export default function Login() {
             href={pagesConfig.register}
             className="text-primary underline-offset-4 hover:underline"
           >
-            Sign up
+            Sign-up
           </Link>
         </CardFooter>
       </Card>

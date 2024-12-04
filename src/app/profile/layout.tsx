@@ -1,10 +1,29 @@
-import { Avatar, AvatarImage, Button } from "@/components/ui";
+"use client";
+
+import { Avatar, AvatarFallback, Button } from "@/components/ui";
 import { pagesConfig } from "@/config/pages.config";
+import UserService, { type UserData } from "@/services/user-service";
 import { ChevronLeft, Pencil } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
+  const [user, setUser] = useState<UserData | null>(null);
+
+  const userService = new UserService(process.env.NEXT_PUBLIC_SERVER_API ?? "");
+
+  useEffect(() => {
+    async function getCurrentUserAsync() {
+      try {
+        const user = await userService.getCurrentUser();
+        setUser(user);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    void getCurrentUserAsync();
+  }, []);
+
   return (
     <div className="container mx-auto py-4">
       <div className="mb-8 flex items-center gap-2">
@@ -30,13 +49,16 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="flex items-start justify-between px-6 py-4">
           <div className="flex items-center gap-4">
             <Avatar>
-              <AvatarImage
+              {/* <AvatarImage
                 src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80"
                 alt="Profile"
                 className="h-full w-full object-cover"
-              />
+              /> */}
+              <AvatarFallback className="bg-gray-200">
+                {user?.username![0]}
+              </AvatarFallback>
             </Avatar>
-            <h2 className="text-lg font-semibold">Louis Hoebregts</h2>
+            <h2 className="text-lg font-semibold">{user?.username}</h2>
           </div>
           <div className="flex gap-6 px-6 py-2 text-sm text-gray-600">
             <button className="font-semibold hover:text-black">

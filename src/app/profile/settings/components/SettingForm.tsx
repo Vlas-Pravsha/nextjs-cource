@@ -6,19 +6,33 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Button, Form } from "@/components/ui/";
 import { FileUpload } from "@/components/FileUpload";
-import { TextEditor } from "@/components/TextEditor";
 import { FormFields } from "@/components/FormFields";
-import { Eye, Save, Send } from "lucide-react";
+import { Save } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  surname: z.string().min(2, "Name must be at least 2 characters"),
-  username: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
-  confirmPassword: z.string().min(6, "Password must be at least 6 characters"),
-});
+const formSchema = z
+  .object({
+    username: z.string().min(2, "Name must be at least 2 characters"),
+    email: z.string().email("Invalid email address"),
+    password: z
+      .string()
+      .min(8, { message: "Password must be at least 8 characters" })
+      .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/, {
+        message:
+          "Password must contain at least one uppercase, one lowercase letter, and one number",
+      }),
+    confirmPassword: z
+      .string()
+      .min(8, { message: "Password must be at least 8 characters" })
+      .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/, {
+        message:
+          "Password must contain at least one uppercase, one lowercase letter, and one number",
+      }),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
 
 export function SettingForm() {
   const [files, setFiles] = useState<File[]>([]);
@@ -26,8 +40,6 @@ export function SettingForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      surname: "",
       username: "",
       email: "",
       password: "",
@@ -37,16 +49,8 @@ export function SettingForm() {
 
   const fields = [
     {
-      name: "name",
-      label: "First Name",
-    },
-    {
-      name: "surname",
-      label: "Last Name",
-    },
-    {
       name: "username",
-      label: "Username",
+      label: "Full Name",
     },
     {
       name: "email",
@@ -81,13 +85,8 @@ export function SettingForm() {
         >
           <FormFields form={form} fields={fields} />
         </div>
-        <div className="flex w-full flex-row gap-12">
-          <TextEditor form={form} label="Explanation" />
-          <div className="w-2/5">
-            <FileUpload files={files} setFiles={setFiles} />
-          </div>
-        </div>
-        <Button type="button" variant="destructive" className="">
+        <FileUpload files={files} setFiles={setFiles} />
+        <Button variant="destructive" type="submit">
           <Save className="mr-2 h-4 w-4" />
           Save
         </Button>

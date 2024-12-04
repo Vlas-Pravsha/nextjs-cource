@@ -19,6 +19,7 @@ export const TeamMemberCard: React.FC<TeamMemberProps> = ({
         className="h-full w-full rounded-lg object-cover"
       />
     </AspectRatio>
+    <h3 className="mb-2 text-lg font-semibold">{name}</h3>
     <h4 className="font-medium text-gray-900">{role}</h4>
   </div>
 );

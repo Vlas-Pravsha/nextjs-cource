@@ -12,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import { pagesConfig } from "@/config/pages.config";
 
+import "react-toastify/dist/ReactToastify.css";
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 

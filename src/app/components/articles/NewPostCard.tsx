@@ -1,5 +1,5 @@
 import { Bookmark } from "lucide-react";
-import { type Post } from "@/types/post";
+import { type Post } from "@/services/post-service";
 
 import {
   Card,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/";
 
 interface NewPostCardProps {
-  post: Post;
+  post: Omit<Post, "user_id">;
 }
 
 export function NewPostCard({ post }: NewPostCardProps) {
@@ -42,7 +42,9 @@ export function NewPostCard({ post }: NewPostCardProps) {
                   <p className="truncate text-sm font-medium">
                     {post.author.name}
                   </p>
-                  <p className="text-xs text-muted-foreground">{post.date}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {post.createdAt?.slice(0, 10)}
+                  </p>
                 </div>
               </div>
               <Button

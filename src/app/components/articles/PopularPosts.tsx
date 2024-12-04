@@ -74,7 +74,7 @@ export function PopularPosts() {
                     <div>
                       <p className="text-sm font-medium">{post.author.name}</p>
                       <p className="text-xs text-muted-foreground">
-                        {post.date}
+                        {post.createdAt?.slice(0, 10)}
                       </p>
                     </div>
                   </div>

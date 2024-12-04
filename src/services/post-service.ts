@@ -1,24 +1,105 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 export interface Author {
+  avatar?: string;
   id: string;
   name: string;
-  avatar: string;
 }
 
 export interface Post {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   image: string;
   author: Author;
-  date: string;
+  createdAt?: string;
+  updatedAt?: string;
   category: string;
+  user_id: string;
+}
+
+export interface ApiResponse<T> {
+  success: boolean;
+  data?: T;
+  message?: string;
 }
 
 class PostService {
   private apiBaseUrl: string;
+  private token: string | null;
 
-  constructor(baseUrl: string) {
+  constructor(baseUrl: string, token: string | null = null) {
     this.apiBaseUrl = baseUrl;
+    this.token = token;
+  }
+
+  setToken(token: string | null) {
+    this.token = token;
+  }
+
+  private async fetchApi<T>(
+    endpoint: string,
+    method: string,
+    body?: unknown,
+  ): Promise<ApiResponse<T>> {
+    const headers: HeadersInit = {
+      "Content-Type": "application/json",
+    };
+
+    if (this.token) {
+      headers.Authorization = `Bearer ${this.token}`;
+    }
+
+    try {
+      const response = await fetch(`${this.apiBaseUrl}${endpoint}`, {
+        method,
+        headers,
+        body: body ? JSON.stringify(body) : undefined,
+      });
+
+      const responseData = await response.json();
+
+      return {
+        success: response.ok,
+        data: responseData,
+        message: responseData.message,
+      };
+    } catch (error) {
+      console.error("API Error:", error);
+
+      return {
+        success: false,
+        message: "Network or server error",
+      };
+    }
+  }
+
+  async getPosts(): Promise<Post[]> {
+    const result = await this.fetchApi<Post[]>("/articles", "GET");
+    return result.success ? (result.data ?? []) : [];
+  }
+
+  async createPost(post: Post): Promise<boolean> {
+    const result = await this.fetchApi<Post>("/articles", "POST", post);
+    return result.success;
+  }
+
+  async getPost(id: string): Promise<Post | null> {
+    const result = await this.fetchApi<Post>(`/articles/${id}`, "GET");
+    return result.success ? (result.data ?? null) : null;
+  }
+
+  async updatePost(post: Post): Promise<boolean> {
+    const result = await this.fetchApi<Post>(
+      `/articles/${post.id}`,
+      "PUT",
+      post,
+    );
+    return result.success;
+  }
+
+  async deletePost(id: string): Promise<boolean> {
+    const result = await this.fetchApi<Post>(`/articles/${id}`, "DELETE");
+    return result.success;
   }
 }
 

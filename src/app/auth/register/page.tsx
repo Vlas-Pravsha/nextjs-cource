@@ -162,7 +162,7 @@ export default function Register() {
             href={pagesConfig.login}
             className="text-primary underline-offset-4 hover:underline"
           >
-            Sign in
+            Sign-in
           </Link>
         </CardFooter>
       </Card>

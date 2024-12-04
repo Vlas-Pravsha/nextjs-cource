@@ -1,18 +1,45 @@
 "use client";
 
-import { useState } from "react";
-import { posts } from "@/constants/posts";
+import { useEffect, useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { PostCategories } from "@/components/PostCategories";
 import { PostLayout } from "@/components/PostLayout";
 import { PostPagination } from "@/components/PostPagination";
-
-const TOTAL_PAGES = Math.ceil(posts.length / 9);
+import PostService, { type Post } from "@/services/post-service";
 
 export default function Categories() {
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState<string>("Sport");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [token, setToken] = useState<string | null>(null);
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  const TOTAL_PAGES = Math.ceil(posts.length / 9);
+
+  const postService = new PostService(
+    process.env.NEXT_PUBLIC_SERVER_API ?? "",
+    token,
+  );
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setToken(token);
+  }, []);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const fetchedPosts = await postService.getPosts();
+        setPosts(fetchedPosts);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    }
+
+    if (token) {
+      void fetchPosts();
+    }
+  }, [token]);
 
   return (
     <div className="bg-background">

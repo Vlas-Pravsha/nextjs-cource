@@ -1,6 +1,6 @@
-import type { Post } from "@/types/post";
+import { Post } from "@/services/post-service";
 
-export const posts: Post[] = [
+export const posts: Omit<Post, "user_id">[] = [
   {
     id: "1",
     title: "Opening Day Of Boating Season, Seattle WA",
@@ -14,7 +14,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&q=80",
     },
-    date: "August 18, 2022",
+    createdAt: "August 18, 2022",
     category: "Sport",
   },
   {
@@ -30,7 +30,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
     },
-    date: "July 25, 2022",
+    createdAt: "July 25, 2022",
     category: "Technology",
   },
   {
@@ -46,7 +46,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Technology",
   },
   {
@@ -62,7 +62,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Sport",
   },
   {
@@ -78,7 +78,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Automotive",
   },
   {
@@ -94,7 +94,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=32&h=32&fit=crop&q=80",
     },
-    date: "May 10, 2022",
+    createdAt: "May 10, 2022",
     category: "Food",
   },
   {
@@ -110,7 +110,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Design",
   },
   {
@@ -126,7 +126,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Sport",
   },
   {
@@ -142,7 +142,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=32&h=32&fit=crop&q=80",
     },
-    date: "May 10, 2022",
+    createdAt: "May 10, 2022",
     category: "Food",
   },
   {
@@ -158,7 +158,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Design",
   },
   {
@@ -174,7 +174,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Sport",
   },
   {
@@ -190,7 +190,7 @@ export const posts: Post[] = [
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&q=80",
     },
-    date: "July 14, 2022",
+    createdAt: "July 14, 2022",
     category: "Sport",
   },
 ];

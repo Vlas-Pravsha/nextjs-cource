@@ -85,7 +85,7 @@ export function MobileNav({ user, handleLogout }: MobileNavProps) {
             </Button>
           </Link>
           <Link href={pagesConfig.register} className="w-full">
-            <Button className="w-full">Sign Up</Button>
+            <Button className="w-full">Sign-Up</Button>
           </Link>
         </div>
       )}

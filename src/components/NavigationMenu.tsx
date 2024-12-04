@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Bookmark, LogOut, Search, Settings, UserCircle } from "lucide-react";
+import {
+  Bookmark,
+  LogOut,
+  Search,
+  Send,
+  Settings,
+  UserCircle,
+} from "lucide-react";
 
 import {
   Avatar,
@@ -102,6 +109,10 @@ export function NavigationMenu() {
               <DropdownMenuItem>
                 <Bookmark className="mr-2 h-4 w-4" />
                 <Link href={pagesConfig.marked}>Saved Articles</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Send className="mr-2 h-4 w-4" />
+                <Link href={pagesConfig.send}>Post Article</Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem

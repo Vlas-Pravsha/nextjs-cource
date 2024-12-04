@@ -2,6 +2,7 @@
 import { type useRouter } from "next/navigation";
 
 export interface UserData {
+  avatar?: string;
   id?: string;
   username?: string;
   email: string;
@@ -73,6 +74,7 @@ class UserService {
   }
 
   async register(userData: UserData): Promise<boolean> {
+    const { toast } = await import("react-toastify");
     const credentials = {
       username: userData.username,
       email: userData.email,
@@ -80,8 +82,6 @@ class UserService {
     };
 
     const result = await this.fetchApi("/users/register", "POST", credentials);
-
-    const { toast } = await import("react-toastify");
 
     if (result.success) {
       toast.success("Registration successful!", {

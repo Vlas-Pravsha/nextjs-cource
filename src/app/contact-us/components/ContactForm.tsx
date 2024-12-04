@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,9 +12,10 @@ import { TextEditor } from "@/components/TextEditor";
 import { FormFields } from "@/components/FormFields";
 
 const formSchema = z.object({
-  subject: z.string().min(2, "Subject must be at least 2 characters"),
   name: z.string().min(2, "Name must be at least 2 characters"),
+  subject: z.string().min(2, "Subject must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
+  explanation: z.string().optional(),
 });
 
 export function ContactForm() {
@@ -25,6 +27,7 @@ export function ContactForm() {
       subject: "",
       name: "",
       email: "",
+      explanation: "",
     },
   });
 
@@ -39,9 +42,25 @@ export function ContactForm() {
     },
   ];
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // eslint-disable-next-line no-console
-    console.log(values, files);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send data");
+      }
+
+      const data = await response.json();
+      console.log("Success:", data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   }
 
   return (
@@ -58,7 +77,7 @@ export function ContactForm() {
 
         <div className="flex flex-row items-center gap-8">
           <div className="w-4/5">
-            <TextEditor form={form} label="Explanation" />
+            <TextEditor form={form} name="explanation" label="Explanation" />
           </div>
           <div className="w-1/5">
             <FileUpload files={files} setFiles={setFiles} />
