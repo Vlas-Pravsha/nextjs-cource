@@ -17,8 +17,8 @@ export function PostCategories({
   onViewModeChange,
 }: PostCategoriesProps) {
   return (
-    <div className="mb-8 flex items-center justify-between">
-      <div className="flex gap-2">
+    <div className="mb-8 flex flex-wrap items-center justify-between">
+      <div className="flex flex-wrap gap-2">
         {categories.map((category) => (
           <Button
             key={category}

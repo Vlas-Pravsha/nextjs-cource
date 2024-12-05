@@ -6,7 +6,7 @@ import { pagesConfig } from "@/config/pages.config";
 
 function ContactUs() {
   return (
-    <div className="container mx-auto py-4">
+    <div className="container mx-auto p-4">
       <div className="mb-8 flex items-center gap-2">
         <Button variant="ghost" size="icon" className="rounded-full">
           <Link href={pagesConfig.home}>

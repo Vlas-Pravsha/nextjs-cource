@@ -25,7 +25,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="container mx-auto py-4">
+    <div className="container mx-auto p-4">
       <div className="mb-8 flex items-center gap-2">
         <Button variant="ghost" size="icon" className="rounded-full">
           <Link href={pagesConfig.home}>
@@ -46,7 +46,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
             className="h-48 w-full object-cover"
           />
         </div>
-        <div className="flex items-start justify-between px-6 py-4">
+        <div className="flex flex-col items-center justify-between gap-4 px-6 py-4 md:flex-row md:items-start">
           <div className="flex items-center gap-4">
             <Avatar>
               {/* <AvatarImage
@@ -68,7 +68,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
               <Link href={pagesConfig.send}> Send Post</Link>
             </button>
             <button className="font-semibold hover:text-black">
-              <Link href={pagesConfig.categories}>Posts</Link>
+              <Link href={pagesConfig.userPosts}>Posts</Link>
             </button>
           </div>
           <Link href={pagesConfig.settings}>

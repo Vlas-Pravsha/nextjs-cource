@@ -3,7 +3,7 @@ import { SendForm } from "./components/SendForm";
 
 const Send = () => {
   return (
-    <div className="container mx-auto py-4">
+    <div className="container mx-auto p-4">
       <SendForm />
     </div>
   );

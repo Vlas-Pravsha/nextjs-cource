@@ -74,32 +74,44 @@ class PostService {
   }
 
   async getPosts(): Promise<Post[]> {
-    const result = await this.fetchApi<Post[]>("/articles", "GET");
+    const result = await this.fetchApi<Post[]>("/posts", "GET");
+    return result.success ? (result.data ?? []) : [];
+  }
+
+  async getUserPosts(): Promise<Post[]> {
+    const result = await this.fetchApi<Post[]>("/posts/user", "GET");
     return result.success ? (result.data ?? []) : [];
   }
 
   async createPost(post: Post): Promise<boolean> {
-    const result = await this.fetchApi<Post>("/articles", "POST", post);
+    const result = await this.fetchApi<Post>("/posts", "POST", post);
     return result.success;
   }
 
   async getPost(id: string): Promise<Post | null> {
-    const result = await this.fetchApi<Post>(`/articles/${id}`, "GET");
+    const result = await this.fetchApi<Post>(`/posts/${id}`, "GET");
     return result.success ? (result.data ?? null) : null;
   }
 
   async updatePost(post: Post): Promise<boolean> {
-    const result = await this.fetchApi<Post>(
-      `/articles/${post.id}`,
-      "PUT",
-      post,
-    );
+    const result = await this.fetchApi<Post>(`/posts/${post.id}`, "PUT", post);
     return result.success;
   }
 
   async deletePost(id: string): Promise<boolean> {
-    const result = await this.fetchApi<Post>(`/articles/${id}`, "DELETE");
+    const result = await this.fetchApi<Post>(`/posts/${id}`, "DELETE");
     return result.success;
+  }
+
+  sortPostsByDate(posts: Post[]): Post[] {
+    return posts
+      .filter(
+        (post) => post.createdAt && !isNaN(new Date(post.createdAt).getTime()),
+      )
+      .sort(
+        (a, b) =>
+          new Date(b.createdAt!).getTime() - new Date(a.createdAt!).getTime(),
+      );
   }
 }
 

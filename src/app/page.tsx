@@ -22,11 +22,13 @@ export default function Home() {
           description="You've Read All Your Free Member-Only Stories. Become A Member To Get Unlimited Access. Your Membership Fee Supports The Voices You Want To Hear More From."
         />
         <VideoCard
+          className="hidden md:block"
           imageUrl="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80"
           title="5 Reasons Why You Should Wrap..."
           description="So, You Finally Went To Your First Boxing Class And Learned The Basics Of The Sport. You Also Learned That It's Recommended To Wrap Your Hands Before Putting On The Gloves."
         />
         <VideoCard
+          className="hidden md:block"
           imageUrl="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80"
           title="Music Genre Classification With..."
           description="A Guide To Analyzing Audio/Music Signals In Python – Music Is Like A Mirror, And It Tells People A Lot About Who You Are And What You Care About."

@@ -75,11 +75,11 @@ export function ContactForm() {
           <FormFields form={form} fields={fields} />
         </div>
 
-        <div className="flex flex-row items-center gap-8">
-          <div className="w-4/5">
+        <div className="flex flex-col items-center gap-8 md:flex-row">
+          <div className="w-full md:w-4/5">
             <TextEditor form={form} name="explanation" label="Explanation" />
           </div>
-          <div className="w-1/5">
+          <div className="w-full md:w-1/5">
             <FileUpload files={files} setFiles={setFiles} />
           </div>
         </div>

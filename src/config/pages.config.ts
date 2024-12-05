@@ -5,6 +5,7 @@ class PagesConfig {
   contact = "/contact-us";
   login = "/auth/login";
   register = "/auth/register";
+  userPosts = "/profile/user-posts";
   settings = "/profile/settings";
   marked = "/profile/marked-posts";
   send = "/profile/send-post";

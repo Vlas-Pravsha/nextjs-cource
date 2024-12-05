@@ -3,7 +3,7 @@ import { SettingForm } from "./components/SettingForm";
 
 const Settings = () => {
   return (
-    <div className="container mx-auto py-4">
+    <div className="container mx-auto p-4">
       <SettingForm />
     </div>
   );

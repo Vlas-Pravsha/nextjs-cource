@@ -84,29 +84,16 @@ export function SendForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="flex w-full flex-row gap-12">
           <div className="flex w-full flex-col gap-4">
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <FormFields form={form} fields={fields} />
             </div>
             <TextEditor form={form} name="description" label="Description" />
           </div>
-          <div className="flex w-1/3 flex-col gap-4">
-            <FileUpload files={files} setFiles={setFiles} />
-            <div className="flex justify-between">
-              <Button type="button" variant="secondary">
-                <Save className="mr-2 h-4 w-4" />
-                Draft
-              </Button>
-              <Button type="button" variant="secondary">
-                <Eye className="mr-2 h-4 w-4" />
-                Preview
-              </Button>
-              <Button type="submit" className="bg-red-500 text-white">
-                <Send className="mr-2 h-4 w-4" />
-                Publish
-              </Button>
-            </div>
-          </div>
         </div>
+        <Button type="submit" className="bg-red-500 text-white">
+          <Send className="mr-2 h-4 w-4" />
+          Publish
+        </Button>
       </form>
     </Form>
   );

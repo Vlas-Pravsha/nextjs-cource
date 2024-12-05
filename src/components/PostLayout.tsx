@@ -11,13 +11,21 @@ import {
 
 import { cn } from "@/lib/utils";
 import { type Post } from "@/services/post-service";
+import DeleteButton from "./DeleteButton";
 
 interface BlogGridProps {
   posts: Omit<Post, "user_id">[];
   viewMode: "grid" | "list";
+  onDeletePost?: (postId: string) => void;
+  isDelete?: boolean;
 }
 
-export function PostLayout({ viewMode, posts }: BlogGridProps) {
+export function PostLayout({
+  viewMode,
+  posts,
+  onDeletePost,
+  isDelete = false,
+}: BlogGridProps) {
   return (
     <div
       className={cn(
@@ -30,7 +38,7 @@ export function PostLayout({ viewMode, posts }: BlogGridProps) {
       {posts.map((post, index) => (
         <Card
           key={`post${post.title}-${index}`}
-          className="overflow-hidden transition-shadow hover:shadow-lg"
+          className="relative overflow-hidden transition-shadow hover:shadow-lg"
         >
           <AspectRatio ratio={16 / 9}>
             <img
@@ -43,6 +51,12 @@ export function PostLayout({ viewMode, posts }: BlogGridProps) {
             <h3 className="mb-2 line-clamp-2 text-lg font-semibold">
               {post.title}
             </h3>
+            {isDelete && (
+              <DeleteButton
+                onDelete={() => onDeletePost && onDeletePost(post.id)}
+              />
+            )}
+
             <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
               {post.description}
             </p>
