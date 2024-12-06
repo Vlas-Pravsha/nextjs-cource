@@ -5,7 +5,7 @@ import { FooterInstagram } from "./FooterInstagram";
 import { FooterNewsletter } from "./FooterNewsletter";
 import { FooterSocial } from "./FooterSocial";
 
-export function Footer() {
+function Footer() {
   return (
     <footer className="mt-16 py-12">
       <div className="container mx-auto flex flex-col gap-8 px-4 lg:flex-row">
@@ -44,3 +44,5 @@ export function Footer() {
     </footer>
   );
 }
+
+export default Footer;

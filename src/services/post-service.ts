@@ -6,7 +6,7 @@ export interface Author {
 }
 
 export interface Post {
-  id?: string;
+  _id?: string;
   title: string;
   description: string;
   image: string;
@@ -15,6 +15,7 @@ export interface Post {
   updatedAt?: string;
   category: string;
   user_id: string;
+  isFavorite?: boolean;
 }
 
 export interface ApiResponse<T> {
@@ -94,7 +95,7 @@ class PostService {
   }
 
   async updatePost(post: Post): Promise<boolean> {
-    const result = await this.fetchApi<Post>(`/posts/${post.id}`, "PUT", post);
+    const result = await this.fetchApi<Post>(`/posts/${post._id}`, "PUT", post);
     return result.success;
   }
 

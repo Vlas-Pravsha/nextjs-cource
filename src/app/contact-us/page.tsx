@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui";
-import { ContactForm } from "./components/ContactForm";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { pagesConfig } from "@/config/pages.config";
+import { ContactForm } from "./components/ContactForm";
 
 function ContactUs() {
   return (

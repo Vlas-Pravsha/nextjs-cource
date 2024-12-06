@@ -53,7 +53,7 @@ export function PostLayout({
             </h3>
             {isDelete && (
               <DeleteButton
-                onDelete={() => onDeletePost && onDeletePost(post.id)}
+                onDelete={() => onDeletePost && onDeletePost(post._id!)}
               />
             )}
 

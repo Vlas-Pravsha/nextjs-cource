@@ -19,7 +19,7 @@ const Marked = () => {
 
   async function onDeletePost(postId: string) {
     await postService.deletePost(postId);
-    const filteredPosts = posts.filter((post) => post.id !== postId);
+    const filteredPosts = posts.filter((post) => post._id !== postId);
     setPosts(filteredPosts);
   }
 

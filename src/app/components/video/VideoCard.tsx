@@ -11,7 +11,7 @@ interface VideoCardProps {
   size?: "small" | "large";
 }
 
-export const VideoCard: React.FC<VideoCardProps> = ({
+const VideoCard: React.FC<VideoCardProps> = ({
   imageUrl,
   title,
   description,
@@ -38,3 +38,5 @@ export const VideoCard: React.FC<VideoCardProps> = ({
     </article>
   );
 };
+
+export default VideoCard;

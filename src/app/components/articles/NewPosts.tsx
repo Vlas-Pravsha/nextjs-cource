@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { pagesConfig } from "@/config/pages.config";
 import Link from "next/link";
 
-export function NewPosts() {
+function NewPosts() {
   const [token, setToken] = useState<string | null>(null);
   const [posts, setPosts] = useState<Post[]>([]);
 
@@ -57,3 +57,5 @@ export function NewPosts() {
     </div>
   );
 }
+
+export default NewPosts;

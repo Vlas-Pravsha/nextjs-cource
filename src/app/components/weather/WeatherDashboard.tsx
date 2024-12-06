@@ -44,7 +44,7 @@ const cities = [
   },
 ];
 
-export function WeatherDashboard() {
+function WeatherDashboard() {
   return (
     <div className="space-y-6 p-4">
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -67,3 +67,5 @@ export function WeatherDashboard() {
     </div>
   );
 }
+
+export default WeatherDashboard;

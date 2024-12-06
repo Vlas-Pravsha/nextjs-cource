@@ -5,10 +5,7 @@ interface VideoSectionProps {
   children: React.ReactNode;
 }
 
-export const VideoSection: React.FC<VideoSectionProps> = ({
-  title,
-  children,
-}) => {
+const VideoSection: React.FC<VideoSectionProps> = ({ title, children }) => {
   return (
     <section className="bg-gray-100 px-4 py-8">
       <div className="container mx-auto">
@@ -24,3 +21,5 @@ export const VideoSection: React.FC<VideoSectionProps> = ({
     </section>
   );
 };
+
+export default VideoSection;

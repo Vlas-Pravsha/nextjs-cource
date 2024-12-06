@@ -26,10 +26,10 @@ export function NewPostCard({ post }: NewPostCardProps) {
             className="h-48 w-full rounded-lg object-cover xl:h-48 xl:w-64"
           />
           <div className="min-w-0 flex-1 p-4">
-            <h3 className="mb-1 line-clamp-2 text-base font-semibold">
+            <h3 className="mb-1 line-clamp-1 text-base font-semibold">
               {post.title}
             </h3>
-            <p className="mb-2 line-clamp-3 text-sm text-muted-foreground">
+            <p className="mb-2 line-clamp-2 text-sm text-muted-foreground">
               {post.description}
             </p>
             <div className="flex items-center justify-between rounded-lg bg-gray-100 px-2 py-1">
