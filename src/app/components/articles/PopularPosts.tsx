@@ -47,7 +47,7 @@ export function PopularPosts() {
         <div className="flex space-x-6">
           {posts.map((post) => (
             <div
-              key={post.id}
+              key={post._id}
               className="flex-shrink-0 flex-grow-0 basis-full md:basis-1/2 lg:basis-1/4"
             >
               <Card>

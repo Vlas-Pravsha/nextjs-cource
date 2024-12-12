@@ -17,16 +17,6 @@ interface MobileNavProps {
 export function MobileNav({ user, handleLogout }: MobileNavProps) {
   return (
     <div className="flex flex-col space-y-4 p-4">
-      {/* Search Bar */}
-      <div className="relative">
-        <Input
-          type="search"
-          placeholder="Search Anything"
-          className="w-full rounded-lg bg-gray-100 px-8 py-4"
-        />
-        <Search className="absolute right-2 top-2.5 h-4 w-4 text-muted-foreground" />
-      </div>
-
       {/* Navigation Links */}
       <nav className="space-y-2">
         <Button variant="ghost" className="w-full justify-start">

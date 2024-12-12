@@ -1,31 +1,46 @@
 import { LayoutGrid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { type CategoriesType, useCategory } from "@/context/CategoryContext";
 
-interface PostCategoriesProps {
-  activeCategory: string;
-  onCategoryChange: (category: string) => void;
-  viewMode: "grid" | "list";
-  onViewModeChange: (mode: "grid" | "list") => void;
-}
-
-const categories = ["New", "Trendy", "Popular", "Top"];
+const categories: CategoriesType[] = [
+  "Food",
+  "Animal",
+  "Car",
+  "Sport",
+  "Music",
+  "Technology",
+  "Abstract",
+];
 
 export function PostCategories({
-  activeCategory,
-  onCategoryChange,
   viewMode,
   onViewModeChange,
-}: PostCategoriesProps) {
+}: {
+  viewMode: "grid" | "list";
+  onViewModeChange: (mode: "grid" | "list") => void;
+}) {
+  const { selectedCategory, setSelectedCategory } = useCategory();
+
   return (
     <div className="mb-8 flex flex-wrap items-center justify-between">
       <div className="flex flex-wrap gap-2">
+        <Button
+          key="All"
+          variant={selectedCategory === "All" ? "default" : "ghost"}
+          onClick={() => setSelectedCategory("All")}
+          className={
+            selectedCategory === "All" ? "text-primary-foreground" : ""
+          }
+        >
+          All
+        </Button>
         {categories.map((category) => (
           <Button
             key={category}
-            variant={activeCategory === category ? "default" : "ghost"}
-            onClick={() => onCategoryChange(category)}
+            variant={selectedCategory === category ? "default" : "ghost"}
+            onClick={() => setSelectedCategory(category)}
             className={
-              activeCategory === category ? "text-primary-foreground" : ""
+              selectedCategory === category ? "text-primary-foreground" : ""
             }
           >
             {category}

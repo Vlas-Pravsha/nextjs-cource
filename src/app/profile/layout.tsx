@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, Button } from "@/components/ui";
 import { pagesConfig } from "@/config/pages.config";
 import UserService, { type UserData } from "@/services/user-service";
-import { ChevronLeft, Pencil } from "lucide-react";
+import { ChevronLeft, Home } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -49,11 +49,6 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="flex flex-col items-center justify-between gap-4 px-6 py-4 md:flex-row md:items-start">
           <div className="flex items-center gap-4">
             <Avatar>
-              {/* <AvatarImage
-                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80"
-                alt="Profile"
-                className="h-full w-full object-cover"
-              /> */}
               <AvatarFallback className="bg-gray-200">
                 {user?.username![0]}
               </AvatarFallback>
@@ -71,10 +66,10 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
               <Link href={pagesConfig.userPosts}>Posts</Link>
             </button>
           </div>
-          <Link href={pagesConfig.settings}>
-            <Button aria-label="Edit Profile" variant="destructive">
-              <Pencil size={16} />
-              Edit Profile
+          <Link href={pagesConfig.home}>
+            <Button aria-label="Home" variant="destructive">
+              <Home size={16} />
+              Home
             </Button>
           </Link>
         </div>

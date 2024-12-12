@@ -18,6 +18,9 @@ interface BlogGridProps {
   viewMode: "grid" | "list";
   onDeletePost?: (postId: string) => void;
   isDelete?: boolean;
+  onAddFavorite?: (post: Omit<Post, "user_id">) => void;
+  onRemoveFavorite?: (postId: string) => void;
+  isPostFavorite?: (postId: string) => boolean;
 }
 
 export function PostLayout({
@@ -25,6 +28,9 @@ export function PostLayout({
   posts,
   onDeletePost,
   isDelete = false,
+  onAddFavorite,
+  onRemoveFavorite,
+  isPostFavorite,
 }: BlogGridProps) {
   return (
     <div
@@ -73,9 +79,27 @@ export function PostLayout({
                   </p>
                 </div>
               </div>
-              <button>
-                <Bookmark className={cn("h-5 w-5 text-gray-400")} />
-              </button>
+              {onAddFavorite && onRemoveFavorite && isPostFavorite && (
+                <button
+                  onClick={() => {
+                    if (isPostFavorite(post._id!)) {
+                      onRemoveFavorite(post._id!);
+                    } else {
+                      onAddFavorite(post);
+                    }
+                  }}
+                  className="hover:text-foreground"
+                >
+                  {isPostFavorite(post._id!) ? (
+                    <Bookmark
+                      className="h-5 w-5 text-yellow-400"
+                      fill="currentColor"
+                    />
+                  ) : (
+                    <Bookmark className="h-5 w-5 text-gray-400" />
+                  )}
+                </button>
+              )}
             </div>
           </div>
         </Card>

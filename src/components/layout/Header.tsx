@@ -13,6 +13,7 @@ import Link from "next/link";
 import { pagesConfig } from "@/config/pages.config";
 
 import "react-toastify/dist/ReactToastify.css";
+import { DialogTitle } from "../ui/dialog";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +38,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <DialogTitle>Mobile Navigation</DialogTitle>
               <MobileNav />
             </SheetContent>
           </Sheet>

@@ -2,7 +2,7 @@ import { Post } from "@/services/post-service";
 
 export const posts: Omit<Post, "user_id">[] = [
   {
-    id: "1",
+    _id: "1",
     title: "Opening Day Of Boating Season, Seattle WA",
     description:
       "Of Course The Puget Sound Is Very Watery, And Where There Is Water, There Are Boats.",
@@ -18,7 +18,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Sport",
   },
   {
-    id: "2",
+    _id: "2",
     title: "How To Choose The Right Laptop For Programming",
     description:
       "Choosing The Right Laptop For Programming Can Be A Tough Process.",
@@ -34,7 +34,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Technology",
   },
   {
-    id: "3",
+    _id: "3",
     title: "How We Built The First Real Self-Driving Car",
     description:
       "Electric Self-Driving Cars Will Save Millions Of Lives And Significantly Accelerate The World's Transition To Sustainable Energy.",
@@ -50,7 +50,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Technology",
   },
   {
-    id: "4",
+    _id: "4",
     title: "Self-Improvement Has Become An Extreme Sport",
     description:
       "What We're Told We Must Do Each Day To Develop And Be Successful Has Gone Out Of Control.",
@@ -66,7 +66,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Sport",
   },
   {
-    id: "5",
+    _id: "5",
     title: "Why Buying A New Car Makes More Sense Now",
     description:
       "Many Experts Will Tell You Buying Cars Used Is Best For Your Long-Term Financial Health.",
@@ -82,7 +82,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Automotive",
   },
   {
-    id: "6",
+    _id: "6",
     title: "How To Persuade Your Parents To Buy Fast Food",
     description:
       "Parents Often Don't Want To Buy Fast Food. They May Be Worried That It's Too Expensive.",
@@ -98,7 +98,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Food",
   },
   {
-    id: "7",
+    _id: "7",
     title: "Typography Can Make Or Break Your Design",
     description:
       "One Of The Most Important Skills You Can Learn As A Designer Is How To Choose Type.",
@@ -114,7 +114,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Design",
   },
   {
-    id: "8",
+    _id: "8",
     title: "House Boating On Lake Shasta",
     description:
       "The Best Way To Spend A Long 4th Of July Weekend: Wake Boarding, Swimming, Barbecues.",
@@ -130,7 +130,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Sport",
   },
   {
-    id: "9",
+    _id: "9",
     title: "How To Persuade Your Parents To Buy Fast Food",
     description:
       "Parents Often Don't Want To Buy Fast Food. They May Be Worried That It's Too Expensive.",
@@ -146,7 +146,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Food",
   },
   {
-    id: "10",
+    _id: "10",
     title: "Typography Can Make Or Break Your Design",
     description:
       "One Of The Most Important Skills You Can Learn As A Designer Is How To Choose Type.",
@@ -162,7 +162,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Design",
   },
   {
-    id: "11",
+    _id: "11",
     title: "House Boating On Lake Shasta",
     description:
       "The Best Way To Spend A Long 4th Of July Weekend: Wake Boarding, Swimming, Barbecues.",
@@ -178,7 +178,7 @@ export const posts: Omit<Post, "user_id">[] = [
     category: "Sport",
   },
   {
-    id: "12",
+    _id: "12",
     title: "House Boating On Lake Shasta",
     description:
       "The Best Way To Spend A Long 4th Of July Weekend: Wake Boarding, Swimming, Barbecues.",
