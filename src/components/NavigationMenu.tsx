@@ -13,8 +13,6 @@ import {
 
 import {
   Avatar,
-  AvatarImage,
-  Input,
   Button,
   DropdownMenu,
   DropdownMenuContent,
@@ -29,15 +27,12 @@ import {
 
 import UserService, { type UserData } from "@/services/user-service";
 import { pagesConfig } from "@/config/pages.config";
-import PostService from "@/services/post-service";
 
 export function NavigationMenu() {
   const [user, setUser] = useState<UserData | null>(null);
 
   const userService = new UserService(process.env.NEXT_PUBLIC_SERVER_API ?? "");
-  const postrService = new PostService(
-    process.env.NEXT_PUBLIC_SERVER_API ?? "",
-  );
+
 
   const handleLogout = () => {
     userService.logout();
